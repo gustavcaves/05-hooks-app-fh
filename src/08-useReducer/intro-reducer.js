@@ -36,6 +36,20 @@ todos = todoReducer( todos, addTodoAction );
 
 console.log({state: todos})
 
+const addTodoAction2 = {
+    type: '[TODO] add todo2',
+    payload: newTodo,
+}
+
+const newTodo2 = {
+    id: 2,
+    todo: 'Recolectar la priedra del tiempo',
+    done: false
+}
+
+todos = todoReducer( todos, addTodoAction2 );
+
+console.log({state: todos})
 
 
 // This code is an example of how to use a reducer function in a React application. It defines an initial state for a to-do list, which is an array of objects with an id, a to-do text, and a done status.
