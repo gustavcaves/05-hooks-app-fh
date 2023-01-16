@@ -24,7 +24,13 @@ export const TodoApp = () => {
     // const { id, description, done } = todos;
 
     const handleNewTodo = ( todo ) => {
-        console.log( todo )
+        const action = {
+            type: '[TODO] Add todo',
+            payload: todo,
+        }
+
+        dispatch( action )
+
     }
 
   return (
@@ -36,7 +42,7 @@ export const TodoApp = () => {
                 <div className="col-7">
 
                     {/* { TodoList } */}
-                    <TodoList />
+                    <TodoList todos={ todos } />
                     {/* { Fin de TodoList } */}
 
                 </div>
@@ -45,7 +51,7 @@ export const TodoApp = () => {
                     <hr />
                         {/* TodoAdd onNewTodo( todo ) */}
                         {/* { id: new Date()..., description: '', done: false } */}
-                        <TodoAdd todos={ todos } />
+                        <TodoAdd onNewTodo={ handleNewTodo } />
                          {/* Fin TodoAdd */}
                 </div>
             </div>
