@@ -50,6 +50,14 @@ export const TodoApp = () => {
         })
     }
 
+    const handleToggleTodo = ( id ) => {
+        // console.log( {id} )
+        dispatch({
+            type: '[TODO] Toggle Todo',
+            payload: id
+        })
+    }
+
 
   return (
         <>
@@ -62,7 +70,9 @@ export const TodoApp = () => {
                     {/* { TodoList } */}
                     <TodoList 
                         todos={ todos } 
-                        onDeleteTodo={ handleDeleteTodo } />
+                        onDeleteTodo={ handleDeleteTodo } 
+                        onToggleTodo={ handleToggleTodo }
+                        />
                     {/* { Fin de TodoList } */}
 
                 </div>
