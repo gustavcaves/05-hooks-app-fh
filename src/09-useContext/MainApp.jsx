@@ -1,3 +1,5 @@
+import { UseProvider } from "./context/UseProvider"
+
 import { Navigate, Route, Routes } from "react-router-dom"
 import { AboutPage } from "./AboutPage"
 import { HomePage } from "./HomePage"
@@ -6,7 +8,7 @@ import { Navbar } from "./Navbar"
 
 export const MainApp = () => {
   return (
-    <>
+    <UseProvider>
 
         {/* <h1>MainApp</h1> */}
         
@@ -26,6 +28,6 @@ export const MainApp = () => {
 
 
 
-    </>
+    </UseProvider>
   )
 }
