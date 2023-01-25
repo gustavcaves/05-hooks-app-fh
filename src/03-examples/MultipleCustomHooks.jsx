@@ -8,7 +8,7 @@ export const MultipleCustomHooks = () => {
     
     const { data, isLoading, hasError } = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/${counter}`)
     
-    console.log(data, isLoading, hasError )
+    // console.log(data, isLoading, hasError )
 
     const { author, quote } = !!data && data[0];
   
