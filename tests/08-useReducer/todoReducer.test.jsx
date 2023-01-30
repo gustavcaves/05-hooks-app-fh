@@ -34,29 +34,29 @@ describe('Pruebas en todoReducer', () => {
 
     // });
 
-    // test('debe eliminar un TODO', () => {
+    test('debe eliminar un TODO', () => {
 
-    //     const action3 = {
-    //         type: '[TODO] Remove Todo',
-    //         payload: 1
-    //     };
+        const action3 = {
+            type: '[TODO] Remove Todo',
+            payload: 1
+        };
 
-    //     const newState = todoReducer( initialState, action3 );
-    //     expect( newState.length ).toBe( 0 );
-    // });
+        const newState = todoReducer( initialState, action3 );
+        expect( newState.length ).toBe( 0 );
+    });
 
 
-    // test('debe de realizar el Toogle del todo', () => {
+    test('debe de realizar el Toogle del todo', () => {
 
-    //     const action4 = {
-    //         type: '[TODO] Toggle Todo',
-    //         payload: 1
-    //     };
+        const action4 = {
+            type: '[TODO] Toggle Todo',
+            payload: 1
+        };
 
-    //     const newState = todoReducer( initialState, action4 );
-    //     console.log(newState[0].done)
-    //     expect( newState[0].done ).toBeTruthy();
+        const newState = todoReducer( initialState, action4 );
+        console.log(newState[0].done)
+        expect( newState[0].done ).toBeTruthy();
         
-    // });
+    });
 
 });   
