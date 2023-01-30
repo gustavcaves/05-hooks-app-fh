@@ -9,30 +9,30 @@ describe('Pruebas en todoReducer', () => {
     }]
 
     
-    // test('debe de regresar el estado inicial', () => {
+    test('debe de regresar el estado inicial', () => {
         
-    //     const newState = todoReducer( initialState, {});
-    //     expect( newState ).toBe( initialState )
+        const newState = todoReducer( initialState, {});
+        expect( newState ).toBe( initialState )
 
-    // });
+    });
 
-    // test('debe de agregar un todo', () => {
+    test('debe de agregar un todo', () => {
    
-    //     const action = {
-    //         type: '[TODO] Add Todo',
-    //         payload: {
-    //             id: 2,
-    //             description: 'Nuevo todo #2',
-    //             done: false
-    //         }
-    //     };
+        const action = {
+            type: '[TODO] Add Todo',
+            payload: {
+                id: 2,
+                description: 'Nuevo todo #2',
+                done: false
+            }
+        };
         
-    //     const newState = todoReducer( initialState, action);
-    //     expect( newState.length ).toBe( 2 );
-    //     expect( newState ).toContain( action.payload );
+        const newState = todoReducer( initialState, action);
+        expect( newState.length ).toBe( 2 );
+        expect( newState ).toContain( action.payload );
 
 
-    // });
+    });
 
     test('debe eliminar un TODO', () => {
 
@@ -56,6 +56,10 @@ describe('Pruebas en todoReducer', () => {
         const newState = todoReducer( initialState, action4 );
         console.log(newState[0].done)
         expect( newState[0].done ).toBeTruthy();
+
+        const newState2 = todoReducer( newState, action4 );
+        console.log(newState2[0].done)
+        expect( newState2[0].done ).toBeFalsy();
         
     });
 
