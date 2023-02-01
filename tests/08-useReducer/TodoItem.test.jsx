@@ -25,14 +25,21 @@ describe('Pruebas en <TodoItem />', () => {
             /> 
         );
 
-
-        screen.debug()
+        // screen.debug()
 
         const liElement = screen.getByRole('listitem');
-        console.log(liElement.innerHTML)
+        // console.log(liElement.innerHTML)
 
-        expect( liElement.className ).toBe('align-self-center')
+        expect( liElement.className ).toBe('list-group-item d-flex justify-content-between')
+
+        const spanElement = screen.getByLabelText('span');
+        console.log( spanElement.className )
+        expect( spanElement.className ).toBe('align-self-center ')
+        expect( spanElement.className ).toContain('align-self-center')
+        expect( spanElement.className ).not.toContain('text-decoration-line-through')
 
     });
+
+    
     
 });
