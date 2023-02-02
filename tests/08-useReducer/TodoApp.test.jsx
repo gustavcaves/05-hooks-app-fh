@@ -24,8 +24,10 @@ describe('Pruebas en el componente <TodoApp />', () => {
     test('debe de mostrar el componente correctamente ', () => {
 
         render( <TodoApp /> )
-        screen.debug()
-        expect( screen.getByText())
+        // screen.debug()
+        expect( screen.getByText('Todo #1')).toBeTruthy()
+        expect( screen.getByText('Todo #2')).toBeTruthy()
+        expect( screen.getByRole('textbox')).toBeTruthy()
         
     });
 
