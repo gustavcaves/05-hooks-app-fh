@@ -25,21 +25,26 @@ describe('Pruebas en <LogingPage />', () => {
 
     test('debe de llamar el setUser cuando se hace click en el boton', () => {
 
+        const setUserMock = jest.fn();
+
         render( 
-            <UserContext.Provider value={{ user: null }}>
+            <UserContext.Provider value={{ user: null, setUser: setUserMock }}>
                 <LoginPage />
             </UserContext.Provider>
-            );
+        );
     
-            screen.debug()
-    
-            const preUser = screen.getByLabelText( 'pre' );
-            // console.log( preUser.innerHTML )
-            const button = screen.getByRole('button').click;
-            // console.log( button )
-            fireEvent.click( button );
-            expect( preUser.innerHTML ).toBe( { id: 123, name: 'Gustav', email: 'gustav@gmail.com' } )    
         
+        // console.log( preUser.innerHTML )
+        const button = screen.getByRole('button');
+        // console.log( button.click )
+        fireEvent.click( button );
+        const preUser = screen.getByLabelText( 'pre' );
+        screen.debug();
+
+        // expect( preUser.innerHTML ).toBe("id: 123, name: 'Gustav', email: 'gustav@gmail.com'")    
+        expect( setUserMock ).toHaveBeenCalledWith({"email": "gustav@gmail.com", "id": 123, "name": "Gustav"})
+
+
     });
 
 });

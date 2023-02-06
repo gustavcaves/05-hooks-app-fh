@@ -5,8 +5,6 @@ export const LoginPage = () => {
 
   const { user, setUser } = useContext( UserContext );
 
-
-
     return (
       <>
   
